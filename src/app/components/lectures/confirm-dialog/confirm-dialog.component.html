@@ -1,0 +1,9 @@
+<h1 mat-dialog-title class="text-danger">Note</h1>
+<div mat-dialog-content>
+  <p>Your Test will begin after <strong>7 days</strong>.Till then, you <strong>cannot access</strong> lecture videos
+    once you click on Continue</p>
+</div>
+<mat-dialog-actions fxLayout="row" fxLayoutAlign="center center">
+  <button mat-raised-button (click)="cancel()" class="bg-secondary text-light">Cancel</button>
+  <button mat-raised-button (click)="proceedForTest()" class="bg-primary text-light">Continue</button>
+</mat-dialog-actions>

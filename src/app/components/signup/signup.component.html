@@ -1,0 +1,75 @@
+<mat-toolbar fxLayout="row" fxLayoutAlign="space-between center" color="primary" style="height: 5em">
+  <h1 mat-line ngClass.lt-sm="mat-display-1" ngClass.gt-sm="mat-display-3" style="margin: 0.2em 0.2em">V2 Redu </h1>
+  <div>
+    <button mat-fab class="login-button" routerLink="" matTooltip="Back to home page">
+      <mat-icon [inline]="true">home</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>
+<div *ngIf="!response && submit" fxLayout="column" fxLayoutAlign="center center" style="height: 90%">
+  <mat-spinner></mat-spinner>
+</div>
+<div *ngIf="response && submit" fxLayout="column" fxLayoutAlign="center center" style="height: 90%">
+  <div class="alert alert-success fade show" role="alert">
+    <p>{{ response.message }}</p>
+    <button class="btn btn-sm " color="primary" [routerLink]="['/login']">Login</button>
+  </div>
+</div>
+<div fxLayout="row" fxLayoutAlign="center center" *ngIf="!submit">
+  <section class="login-card animate__animated animate__fadeInLeft" *ngIf="!resetPassword"
+           style="animation-duration: 0.6s; margin-top: 2em; padding: 0 1em; position: relative">
+    <h1>SignUp</h1>
+    <p class="alert alert-danger alert-dismissible fade show" role="alert"
+       *ngIf="formErrors.passNotValid">{{formErrors.passNotValid}}
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span></button>
+    </p>
+    <form novalidate [formGroup]="signUpForm" (ngSubmit)="SignUp()" style="padding-left: 1.5rem">
+      <div fxLayout="column" fxLayoutAlign="center center">
+        <mat-form-field appearance="standard" style="width: 100%; margin-bottom: 0.6em">
+          <mat-label>Username</mat-label>
+          <input name="username" matInput placeholder="Enter your name" formControlName="username" type="text" required>
+          <mat-error *ngIf="formErrors.username">{{formErrors.username}}</mat-error>
+        </mat-form-field>
+        <div class="text-danger w-100 text-left"><p><strong>*Note</strong> Your username will appear on the certificate.
+        </p></div>
+        <mat-form-field appearance="standard" style="width: 100%; margin-bottom: 0.6em">
+          <mat-label>Email</mat-label>
+          <input name="email" matInput placeholder="example@xyz.com" formControlName="email" type="email" required
+                 email>
+          <mat-error *ngIf="formErrors.email">{{formErrors.email}}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="standard" style="width: 100%; margin-bottom: 0.6em">
+          <mat-label>Name of Institute</mat-label>
+          <input name="username" matInput placeholder="Enter name of your Institute" formControlName="nameOfInstitute"
+                 type="text" required>
+          <mat-error *ngIf="formErrors.nameOfInstitute">{{formErrors.nameOfInstitute}}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="standard" style="width: 100%; margin-bottom: 0.6em">
+          <mat-label>Password</mat-label>
+          <input name="password" formControlName="password" matInput placeholder="Enter your password"
+                 [type]="hide?'password':'text'" required>
+          <button mat-icon-button matSuffix (click)="hide = !hide" type="button">
+            <mat-icon>{{ hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+          <mat-error *ngIf="formErrors.password">{{formErrors.password}}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="standard" style="width: 100%; margin-bottom: 0.6em">
+          <mat-label>Confirm Password</mat-label>
+          <input name="confirmPassword" formControlName="confirmPassword" matInput placeholder="Confirm your password"
+                 [type]="hideConfirm?'password':'text'" required>
+          <button mat-icon-button matSuffix (click)="hideConfirm= !hideConfirm" type="button">
+            <mat-icon>{{ hideConfirm ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+          <mat-error *ngIf="formErrors.confirmPassword">{{formErrors.confirmPassword}}</mat-error>
+        </mat-form-field>
+        <div fxLayout="row" fxLayoutAlign="end center" style="width: 100%; margin: 1em 1em;">
+          <button mat-raised-button type="reset" class="bg-secondary text-light">Clear
+          </button>
+          <button mat-raised-button type="submit" color="primary" style="margin-left: 2em">Submit
+          </button>
+        </div>
+      </div>
+    </form>
+  </section>
+</div>

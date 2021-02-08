@@ -1,0 +1,26 @@
+.display-4{
+  font-size: 3rem;
+  margin: 1rem;
+}
+
+.result{
+  width: 50%;
+  box-shadow: 0 0 5px grey, 0 0 20px lightgray;
+}
+
+mat-progress-bar {
+  height: 20px !important;
+}
+
+.certificate{
+  width: 35vw;
+}
+
+@media screen and (max-width: 600px){
+  .result{
+    width: 95%;
+  }
+  .certificate{
+    width: 95vw;
+  }
+}

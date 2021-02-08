@@ -1,0 +1,184 @@
+<div (scroll)="onWindowScroll($event)" style="height:100vh; overflow-y: scroll; overflow-x: hidden; scroll-behavior: smooth" >
+  <div class="landing-image">
+    <section class="landing-opacity">
+      <mat-toolbar class="landing-head" fxLayout="row" fxLayoutAlign="space-between center" id="head">
+        <div></div>
+        <div>
+          <a href="#about" mat-button class="landing-button">About</a>
+          <button mat-button class="landing-button" routerLink="signup">SignUp</button>
+          <button mat-button class="landing-button" routerLink="login">Login</button>
+        </div>
+      </mat-toolbar>
+      <div fxLayout="column">
+        <h1 class="animate__animated animate__fadeInDown" ngClass.lt-xl="mat-display-4" ngClass.lt-md="mat-display-3" ngClass.lt-sm="mat-display-2"
+            style="margin: 0.8em 0.5em; color: white; animation-duration: 0.7s">V2 Redu </h1>
+        <div fxLayout="row" fxLayoutAlign="center center">
+          <p class="intro animate__animated animate__fadeIn" ngClass.lt-sm="mat-subheading-1" ngClass.gt-sm="mat-h1" style="animation-delay: 0.4s; animation-duration: 0.7s">
+            Learn to identify and prioritize patient care during mass causality incidents and disasters. This
+            interactive
+            video simulation software helps to engage and learn in an interesting way while trying to improve patient
+            care
+            outcomes.
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div fxLayout="column" fxLayoutAlign="center center">
+    <div fxLayout="row" fxLayoutAlign="space-around center" style="width: 100vw" id="about">
+      <section class="landing-content">
+        <h1 ngClass.gt-md="mat-display-3" ngClass.lt-lg="mat-display-2" ngClass.md="mat-display-2"
+            ngClass.xs="mat-display-1">About</h1>
+        <p ngClass.gt-xs="mat-h3" ngClass.xs="mat-h4">
+          The following program will take you to video simulation classes, quizzes, case scenario based interactive
+          videos.
+          There is time limit for certain case scenarios once you become expert to the simulation classes which would
+          help
+          you to improve your skills for identifying and tagging in triage system. You can attempt the program more than
+          once; however, you must complete all steps of the program before you can repeat any of the previous steps.
+        </p>
+      </section>
+      <img
+        src="https://flex.com/-/media/Project/Flex/BrandSite/resource-gallery/stories/blog-headers/Simulation--Modeling-ToolsDesign-for-Reliability-DF-Testing1.jpg?revision=3aefc432-6805-4729-8f69-50c58cfa8279"
+        style="width: 40%; margin-top: 3em" ngClass.lt-sm="none">
+    </div>
+    <div fxLayout="row" fxLayoutAlign="space-around center" style="width: 100vw">
+      <section class="landing-content" style="width: 92%">
+        <h1 ngClass.gt-md="mat-display-3" ngClass.lt-lg="mat-display-2" ngClass.md="mat-display-2"
+            ngClass.xs="mat-display-1" >Resources</h1>
+        <mat-list role="list">
+          <mat-divider></mat-divider>
+          <mat-list-item role="listitem" class="mat-list-item">
+            <p ngClass.lg="mat-h2" ngClass.md="mat-h3" ngClass.xs="mat-h4">
+              1) Jafar Bazyar, Mehrdad Farrokhi, Hamidreza Khankeh, Triage Systems in Mass Casualty Incidents and
+              Disasters:
+              A
+              Review Study with A Worldwide Approach, Open Access Macedonian Journal of Medical Sciences, 2019 Feb 15,
+              7(3):
+              482-494.
+            </p>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item role="listitem" class="mat-list-item">
+            <p ngClass.lg="mat-h2" ngClass.md="mat-h3" ngClass.xs="mat-h4">
+              2) Lincoln EW,Strecker-McGraw MK, EMS, Incident Command 2018 Jan; <u>[PubMed PMID: 30521221]</u>
+            </p>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item role="listitem">
+            <p ngClass.lg="mat-h2" ngClass.md="mat-h3" ngClass.xs="mat-h4">
+              3) Heffernan RW,Lerner EB,McKee CH,Browne LR,Colella MR,Liu JM,Schwartz RB, Comparing the Accuracy of Mass
+              Casualty Triage Systems in a Pediatric Population. Prehospital emergency care : official journal of the
+              National Association of EMS Physicians and the National Association of State EMS Directors. 2018 Oct 17;
+              &nbsp;<u>[PubMed PMID: 30196737]</u>
+            </p>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item role="listitem">
+            <p ngClass.lg="mat-h2" ngClass.md="mat-h3" ngClass.xs="mat-h4">
+              4) Hart A,Nammour E,Mangolds V,Broach J, Intuitive versus Algorithmic Triage. Prehospital and disaster
+              medicine. 2018 Aug; &nbsp;<u>[PubMed PMID: 30129913]</u>
+            </p>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item role="listitem">
+            <p ngClass.lg="mat-h2" ngClass.md="mat-h3" ngClass.xs="mat-h4">
+              5) Jain T,Sibley A,Stryhn H,Hubloue I, Comparison of Unmanned Aerial Vehicle Technology-Assisted Triage
+              versus Standard Practice in Triaging Casualties by Paramedic Students in a Mass-Casualty Incident
+              Scenario.
+              Prehospital and disaster medicine. 2018 Aug; <u>[PubMed PMID: 30001765]</u>
+            </p>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item role="listitem">
+            <p ngClass.lg="mat-h2" ngClass.md="mat-h3" ngClass.xs="mat-h4">
+              6) Christopher H. Lee, Disaster and Mass Casualty Triage, AMA Journal of Ethics, Jun 2010,
+            </p>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item role="listitem">
+            <p ngClass.lg="mat-h2" ngClass.md="mat-h3" ngClass.xs="mat-h4">
+              7) First2Act, Simon Cooper, Cooper S Publications, 2017, first2act.com
+            </p>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item role="listitem">
+            <p ngClass.lg="mat-h2" ngClass.md="mat-h3" ngClass.xs="mat-h4">
+              8) WordPress, Triage quiz, free blog, disastermedicine.wordpress.com/3-2-triage-quiz/
+            </p>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item role="listitem">
+            <p ngClass.lg="mat-h2" ngClass.md="mat-h3" ngClass.xs="mat-h4">
+              9) Iain Robertson-Steel, Evolution of triage systems, Emerg Med J.,2006 Feb; 23(2): 154-155.
+            </p>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item role="listitem">
+            <p ngClass.lg="mat-h2" ngClass.md="mat-h3" ngClass.xs="mat-h4">
+              10) Truog, Robert D.; Mitchell, Christine; Daley, George Q. (21 May 2020). "The Toughest Triage —
+              Allocating
+              Ventilators in a Pandemic". The New England Journal of Medicine. 382 (21): 1973–1975.
+              doi:10.1056/nejmp2005689. PMID 32202721. S2CID 214618013.
+            </p>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item role="listitem">
+            <p ngClass.lg="mat-h2" ngClass.md="mat-h3" ngClass.xs="mat-h4">
+              11) "Merriam-Webster Online Dictionary". Retrieved 2008-12-05.
+            </p>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item role="listitem">
+            <p ngClass.lg="mat-h2" ngClass.md="mat-h3" ngClass.xs="mat-h4">
+              12) P.N. Skandalakis, P. Lainas, J.E. Skandalakis, P. Mirilas, "'To afford the wounded speedy assistance':
+              Dominique Jean Larrey and Napoleon", World Journal of Surgery 30:8:1392-9 (August 2006)
+            </p>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item role="listitem">
+            <p ngClass.lg="mat-h2" ngClass.md="mat-h3" ngClass.xs="mat-h4">
+              13) Joost J. van Middendorp, Gonzalo M. Sanchez, Alwyn L. Burridge, "The Edwin Smith papyrus: a clinical
+              reappraisal of the oldest known document on spinal injuries", European Spine Journal 19:11:1815-1823
+              (November 2010)
+            </p>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item role="listitem">
+            <p ngClass.lg="mat-h2" ngClass.md="mat-h3" ngClass.xs="mat-h4">
+              14) Iserson KV, Moskop JC (March 2007). "Triage in medicine, part I: Concept, history, and types". Annals
+              of
+              Emergency Medicine. 49 (3): 275–81.doi:10.1016/j.annemergmed.2006.05.019. PMID 17141139.
+            </p>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item role="listitem">
+            <p ngClass.lg="mat-h2" ngClass.md="mat-h3" ngClass.xs="mat-h4">
+              15) NCLEX Disaster Triage Nursing NCLEX Questions, registerednursen.com.
+            </p>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item role="listitem">
+            <p ngClass.lg="mat-h2" ngClass.md="mat-h3" ngClass.xs="mat-h4">
+              16) Kathleen Natareno, Disaster Knowledge and Awareness of Nurses Related to Triage in Mass Casualty
+              Incidents, Digital Commons @ RIC, May, 2018.
+            </p>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item role="listitem">
+            <p ngClass.lg="mat-h2" ngClass.md="mat-h3" ngClass.xs="mat-h4">
+              17) Kazuyuki AKINAGA, Kaoru SHIBAYAMA, Koichi TAKAHASHI, Setsuko UMESAKI, Koichi SHINCHI, Study on Triage
+              Education for Nursing Students, Asian Journal of Human Services, 2017 Volume 13 Pages 10-22.
+            </p>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+        </mat-list>
+      </section>
+    </div>
+  </div>
+  <div class="up-fab" [ngClass]="{'up-fab-show':windowScrolled}">
+    <button mat-fab color="primary" (click)="scrollToTop()" >
+      <mat-icon inline="true" style="font-size: xx-large">arrow_upward</mat-icon>
+    </button>
+  </div>
+</div>

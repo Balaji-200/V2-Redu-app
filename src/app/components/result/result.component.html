@@ -1,0 +1,40 @@
+<div style="overflow-x: hidden">
+  <div fxLayout="row" fxLayoutAlign="center center" class="mt-5 mb-5">
+    <mat-spinner *ngIf="calculatingResult"></mat-spinner>
+    <mat-card *ngIf="!calculatingResult" class="result animate__animated animate__fadeInRight">
+      <mat-card-header>
+        <mat-card-title>
+          <h1 ngClass="mat-display-2" ngClass.lt-sm="mat-display-1">Result</h1>
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <h1>Your Score: {{totalScore}}/20</h1>
+        <h1 class="mat-display-2 text-center mb-0"
+            [ngClass]="totalScore*5<70?'text-danger':'text-success'">{{totalScore * 5}} %</h1>
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+          <h1>0%</h1>
+          <h1>100%</h1>
+        </div>
+        <mat-progress-bar mode="determinate" [value]="totalScore*5" color="primary"></mat-progress-bar>
+
+        <div *ngIf="passed" class="mt-3 mb-3 alert alert-success fade show" role="alert">
+          <p><strong>Congratulations!!</strong> You passed the test!!</p>
+        </div>
+        <div *ngIf="!passed" class="mt-3 mb-3 alert alert-danger fade show" role="alert">
+          <p><strong>Oops!</strong> You failed the test!</p>
+<!--          <p>You can try again for one last time. Watch the Lecture videos and try again!!</p>-->
+        </div>
+        <div class="w-100 text-center">
+<!--          <button mat-raised-button *ngIf="!passed" class="bg-primary text-light" style="width: 50%"-->
+<!--                  (click)="tryAgain()">Try Again-->
+<!--          </button>-->
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div fxLayout="column" fxLayoutAlign="center center" *ngIf="passed">
+    <mat-spinner *ngIf="!certificate"></mat-spinner>
+    <img *ngIf="certificate" [src]="certificate" class="certificate">
+    <button mat-raised-button color="primary" class="mt-5 mb-5" ><a style="text-decoration: none; color: white" [href]="certificate" download="certificate.jpeg">Download Certificate</a></button>
+  </div>
+</div>

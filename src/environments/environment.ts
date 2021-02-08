@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiURL: 'http://192.168.0.105:3000',
+  genCertiUrl:'https://asia-south1-v2redu-certificate.cloudfunctions.net/V2-Redu_function'
 };
 
 /*

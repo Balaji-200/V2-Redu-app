@@ -1,0 +1,93 @@
+<mat-toolbar class="login-head" fxLayout="row" fxLayoutAlign="space-between center">
+  <h1 mat-line ngClass.lt-sm="mat-display-1" ngClass.gt-sm="mat-display-3" style="margin: 0.2em 0.2em">V2 Redu </h1>
+  <div>
+    <button mat-fab class="login-button" routerLink="" matTooltip="Back to home page">
+      <mat-icon [inline]="true">home</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>
+<div class="login-background">
+  <div class="login-background-opacity" fxLayout="row" fxLayoutAlign="center center">
+    <section class="login-card animate__animated animate__fadeInLeft" *ngIf="!resetPassword"
+             style="animation-duration: 0.4s">
+      <mat-card *ngIf="!loggingIn">
+        <mat-card-title>
+          <h1>Login</h1>
+        </mat-card-title>
+        <mat-card-content>
+          <div *ngIf="loginError" class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Login Failed</strong> Email Or password is incorrect.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"
+                    (click)="loginError = !loginError">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form novalidate [formGroup]="loginForm" (ngSubmit)="Login()">
+            <div fxLayout="column" fxLayoutAlign="center center">
+              <mat-form-field appearance="outline" style="width: 100%; margin-bottom: 1em">
+                <mat-label>Email</mat-label>
+                <input name="email" matInput placeholder="example@xyz.com" formControlName="email" type="email" required
+                       email>
+                <mat-error *ngIf="formErrors.email">{{formErrors.email}}</mat-error>
+              </mat-form-field>
+              <mat-form-field appearance="outline" style="width: 100%; margin-bottom: 1em">
+                <mat-label>Password</mat-label>
+                <input name="password" formControlName="password" matInput placeholder="Enter your password"
+                       [type]="hide?'password':'text'" required>
+                <button mat-icon-button matSuffix (click)="hide = !hide" type="button">
+                  <mat-icon>{{ hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+                <mat-error *ngIf="formErrors.password">{{formErrors.password}}</mat-error>
+              </mat-form-field>
+              <div fxLayout="row" fxLayoutAlign="end center" style="width: 100%">
+                <a class="nav-link link h6" (click)="resetPassword = !resetPassword" style="cursor: pointer">Forgot password ?</a>
+              </div>
+              <div fxLayout="row" fxLayoutAlign="center center" style="width: 100%; margin: 1em 1em;">
+                <button mat-raised-button type="submit" color="primary" style="width: 90%;">Login
+                </button>
+              </div>
+              <p mat-line style="margin: 0.5em 0.2em" ngClass.gt-sm="mat-h2" ngClass.lt-sm="mat-h4">
+                Don't have an account yet?
+                <a [routerLink]="['/signup']">Signup</a>
+                for free.
+              </p>
+            </div>
+          </form>
+        </mat-card-content>
+      </mat-card>
+      <div *ngIf="loggingIn" class="d-flex flex-row align-items-center justify-content-center">
+        <mat-spinner color="accent"></mat-spinner>
+      </div>
+    </section>
+    <section *ngIf="resetPassword" class="login-card animate__animated animate__fadeInRight"
+             style="animation-duration: 0.4s">
+      <mat-card>
+        <mat-card-title>
+          <h1>Forgot Password</h1>
+        </mat-card-title>
+        <mat-card-subtitle>
+          <mat-spinner diameter="10" *ngIf="processingReset && !resetMess"></mat-spinner>
+          <h3 *ngIf="resetMess"
+              [ngClass]="{ 'text-success':resetMess.success, 'text-danger': !resetMess.success }">{{resetMess.message}}</h3>
+        </mat-card-subtitle>
+        <form novalidate [formGroup]="loginForm" (ngSubmit)="resetPass()">
+          <mat-card-content>
+            <div fxLayout="column" fxLayoutAlign="center center">
+              <mat-form-field appearance="outline" style="width: 100%; margin-bottom: 0.2em">
+                <mat-label>Email</mat-label>
+                <input name="email" matInput placeholder="example@xyz.com" formControlName="email" type="email" required
+                       email>
+                <mat-error *ngIf="formErrors.email">{{formErrors.email}}</mat-error>
+              </mat-form-field>
+            </div>
+          </mat-card-content>
+          <mat-card-actions fxLayout="row" fxLayoutAlign="end center">
+            <button [disabled]="processingReset" type="submit" mat-raised-button color="primary">Submit</button>
+            <button mat-raised-button class="bg-secondary text-light" (click)="resetPassword = !resetPassword">Back
+            </button>
+          </mat-card-actions>
+        </form>
+      </mat-card>
+    </section>
+  </div>
+</div>

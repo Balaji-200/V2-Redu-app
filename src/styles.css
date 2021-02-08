@@ -1,1 +1,80 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import '~animate.css/animate.min.css';
+html, body { height: 100%; scroll-behavior: smooth }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;}
+
+.up-fab{
+  bottom: 3em;
+  right: 3em;
+  position: fixed;
+  transition: all .3s ease-in-out;
+  opacity: 0;
+}
+.up-fab-show{
+  opacity: 1;
+  transition: all .3s ease-in-out;
+}
+.login-card{
+  position: absolute;
+  width: 40vw;
+  height: auto;
+}
+.login-background{
+  width: 100vw;
+  height: 100vh;
+  background-image: url("https://y5a3y7k9.stackpathcdn.com/wp-content/uploads/2020/05/start-your-degree-in-human-medicine-1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: -2;
+}
+
+.login-background-opacity{
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+.login-head{
+  position: absolute;
+  background-color: transparent;
+  height: auto;
+  margin-top: 1em;
+  color: white;
+}
+.login-button{
+  background-color: transparent;
+  font-size: xx-large;
+  box-shadow: 0px 0px transparent;
+}
+
+button:focus{
+  outline: none;
+  box-shadow: none;
+}
+
+.login-button:hover{
+  background-color: white;
+  color: black;
+}
+.close:focus{
+  outline: none !important;
+  box-shadow: none !important;
+  opacity: 0.5;
+}
+.bg-primary{
+  background-color: #3f50b5 !important;
+}
+@media only screen and (max-width: 600px){
+  .login-card{
+    width: 90vw;
+  }
+
+  .login-button{
+    font-size: x-large;
+  }
+}
+
+

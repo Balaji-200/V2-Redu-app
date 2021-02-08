@@ -1,0 +1,14 @@
+<mat-toolbar color="primary" style="padding: 2.5em 1rem">
+  <div fxLayout="row" fxLayoutAlign="space-between center" style="width: 100%">
+    <div class="display-4">V2-Redu</div>
+    <div fxLayout="column" fxLayoutAlign="center center" style="height: 100%;">
+      <p *ngIf="name" style="padding: 0; margin: 0">{{name}}</p>
+      <div *ngIf="!name">
+        <mat-spinner color="accent" diameter="20"></mat-spinner>
+      </div>
+      <button *ngIf="!loggingOut" name="logout" mat-button class="bg-danger" (click)="Logout()">LogOut</button>
+      <mat-spinner *ngIf="loggingOut" color="warn" diameter="20"></mat-spinner>
+    </div>
+  </div>
+</mat-toolbar>
+

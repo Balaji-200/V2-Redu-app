@@ -1,0 +1,17 @@
+.pretestForm{
+  padding: 0.5em;
+  margin: 1em;
+  width: 55%;
+  border-radius: 1rem;
+  /*background-color: red;*/
+  box-shadow: 0 0 5px grey, 0 0 30px lightgray;
+}
+
+@media screen and (max-width: 600px){
+  .pretestForm{
+    width: 95%;
+  }
+  .pretestForm ol{
+    padding-inline-start: 30px;
+  }
+}
