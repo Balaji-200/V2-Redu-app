@@ -77,7 +77,7 @@ export class LoginComponent implements OnInit {
         if (res.success) {
           localStorage.setItem('j', res.token);
           this.loggingIn = false;
-          this.router.navigate(['/dashboard/pretest']);
+          this.router.navigate(['/dashboard/demographic']);
         }
       }, err => this.loginError = true);
     }

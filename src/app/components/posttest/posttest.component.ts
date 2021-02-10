@@ -3,8 +3,6 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 import * as data from './posttest.json';
 import {PosttestService} from '../../services/posttest/posttest.service';
 import {Router} from '@angular/router';
-import {createUrlResolverWithoutPackagePrefix} from '@angular/compiler';
-import set = Reflect.set;
 
 @Component({
   selector: 'app-posttest',
@@ -46,7 +44,7 @@ export class PosttestComponent implements OnInit {
           }
         }
         this.processingPost = false;
-      }, err => this.router.navigate(['login']));
+      }, err => this.router.navigate(['/']));
     }
     this.questions.forEach(q => {
       this.posttestForm.addControl(q.question, new FormControl(['', Validators.required]));
@@ -85,5 +83,4 @@ export class PosttestComponent implements OnInit {
       }, err => this.router.navigate(['/']));
     }
   }
-
 }

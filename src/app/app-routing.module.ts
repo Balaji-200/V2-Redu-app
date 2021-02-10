@@ -5,7 +5,7 @@ import {SignupComponent} from './components/signup/signup.component';
 import {LandingComponent} from './components/landing/landing.component';
 import {ResetPasswordComponent} from './components/reset-password/reset-password.component';
 import {
-  AuthGuardService,
+  AuthGuardService, DemoGraphic,
   Lectures,
   LoggedInService,
   PostTest,
@@ -18,6 +18,7 @@ import {PretestComponent} from './components/pretest/pretest.component';
 import {PosttestComponent} from './components/posttest/posttest.component';
 import {ResultComponent} from './components/result/result.component';
 import {LecturesComponent} from './components/lectures/lectures.component';
+import {DemographicComponent} from './components/demographic/demographic.component';
 
 const routes: Routes = [
   { path: '', component: LandingComponent, canActivate:[LoggedInService] },
@@ -25,7 +26,10 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent, canActivate:[LoggedInService] },
   { path:'dashboard', component: DashboardComponent, canActivate:[AuthGuardService], children:[
       {
-        path:'', redirectTo:'pretest', pathMatch:'prefix'
+        path:'', redirectTo:'demographic', pathMatch:'prefix'
+      },
+      {
+        path:'demographic', component:DemographicComponent, canActivate:[DemoGraphic]
       },
       {
         path:'pretest', component:PretestComponent, canActivate:[PreTest]

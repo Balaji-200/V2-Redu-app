@@ -12,7 +12,7 @@
 <div *ngIf="response && submit" fxLayout="column" fxLayoutAlign="center center" style="height: 90%">
   <div class="alert alert-success fade show" role="alert">
     <p>{{ response.message }}</p>
-    <button class="btn btn-sm " color="primary" [routerLink]="['/login']">Login</button>
+    <button mat-raised-button color="primary" [routerLink]="['/login']">Login</button>
   </div>
 </div>
 <div fxLayout="row" fxLayoutAlign="center center" *ngIf="!submit">

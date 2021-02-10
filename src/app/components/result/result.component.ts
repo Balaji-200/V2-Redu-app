@@ -25,7 +25,7 @@ export class ResultComponent implements OnInit {
           this.calculatingResult = false;
         }
       },
-      error => this.router.navigate(['login'])
+      error => this.router.navigate(['/'])
     );
   }
 

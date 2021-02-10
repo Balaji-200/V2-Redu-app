@@ -9,6 +9,7 @@ import {MatDialog} from '@angular/material/dialog';
   templateUrl: './lectures.component.html',
   styleUrls: ['./lectures.component.css']
 })
+
 export class LecturesComponent implements OnInit {
 
   processing = false;
@@ -17,17 +18,18 @@ export class LecturesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if(localStorage.getItem('lect') == null || localStorage.getItem('lect')==''){
-    this.processing = true
-    this.postTestService.getPostTest().subscribe(res => {
-      if(res.questions.length > 0) {
-        localStorage.setItem('lect', 'true');
-        this.router.navigate(['dashboard/posttest']);
-      }
-      else
-        localStorage.setItem('lect', 'false');
-      this.processing= false;
-    })}
+    if (localStorage.getItem('lect') == null || localStorage.getItem('lect') == '') {
+      this.processing = true;
+      this.postTestService.getPostTest().subscribe(res => {
+        if (res.questions.length > 0) {
+          localStorage.setItem('lect', 'true');
+          this.router.navigate(['dashboard/posttest']);
+        } else {
+          localStorage.setItem('lect', 'false');
+        }
+        this.processing = false;
+      });
+    }
   }
 
   next() {

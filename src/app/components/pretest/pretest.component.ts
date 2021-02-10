@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import * as data from './pretest.json';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {PretestService} from '../../services/pretest/pretest.service';
 import {Router} from '@angular/router';
+
 
 @Component({
   selector: 'app-pretest',
@@ -17,21 +18,26 @@ export class PretestComponent implements OnInit {
   formValid = true;
   processingPost = false;
 
-  constructor(private pretestService: PretestService, private router: Router) {
-    if(localStorage.getItem('pre') == null || localStorage.getItem('pre') == '') {
-      this.processingPost = true;
-      this.pretestService.getPretest().subscribe(res => {
+  constructor(private preTestService: PretestService, private router: Router) {
+    this.processingPost = true;
+    if (localStorage.getItem('pre') == null || localStorage.getItem('pre') == '' || localStorage.getItem('pre') == 'false') {
+      this.preTestService.getPretest().subscribe(res => {
         if (res.questions.length > 0) {
           localStorage.setItem('pre', 'true');
           this.router.navigate(['dashboard/lectures']);
-        } else
+        } else {
           localStorage.setItem('pre', 'false');
+        }
         this.processingPost = false;
-      }, error =>  this.router.navigate(['login']));
+      }, err => this.router.navigate(['/']));
     }
     this.questions.forEach(q => {
       this.pretestForm.addControl(q.question, new FormControl(['', Validators.required]));
     });
+  }
+
+  ngOnInit(): void {
+
   }
 
   onSubmit() {
@@ -50,19 +56,17 @@ export class PretestComponent implements OnInit {
         response.push(
           {
             'question': q.question,
-            'answer': this.pretestForm.controls[`${q.question}`].value
+            'answer': this.pretestForm.controls[`${q.question}`].value,
+            'correctAnswer': q.answer
           }
         );
       });
-      this.pretestService.postPretest(response).subscribe(res => {
+      this.preTestService.postPretest(response).subscribe(res => {
         localStorage.setItem('pre', 'true');
         this.processingPost = false;
-        this.router.navigate(['/dashboard/posttest']);
+        this.router.navigate(['/dashboard/lectures']);
       }, err => this.router.navigate(['/']));
     }
-  }
-
-  ngOnInit(): void {
   }
 
 }

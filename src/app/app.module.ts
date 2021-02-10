@@ -36,6 +36,7 @@ import { ResultComponent } from './components/result/result.component';
 import { LecturesComponent } from './components/lectures/lectures.component';
 import { SuccessDialogComponent } from './components/reset-password/success-dialog/success-dialog.component';
 import { ConfirmDialogComponent } from './components/lectures/confirm-dialog/confirm-dialog.component';
+import { DemographicComponent } from './components/demographic/demographic.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { ConfirmDialogComponent } from './components/lectures/confirm-dialog/con
     ResultComponent,
     LecturesComponent,
     SuccessDialogComponent,
-    ConfirmDialogComponent
+    ConfirmDialogComponent,
+    DemographicComponent
   ],
   imports: [
     FlexLayoutModule,

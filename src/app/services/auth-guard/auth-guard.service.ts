@@ -28,7 +28,25 @@ export class LoggedInService implements CanActivate {
   }
 
   canActivate(): boolean {
-    if (localStorage.getItem('j') === null || localStorage.getItem('j') == '') {
+    if (localStorage.getItem('j') == null || localStorage.getItem('j') == '') {
+      return true;
+    } else {
+      this.router.navigate(['dashboard/demographic']);
+      return false;
+    }
+  }
+}
+
+@Injectable({
+  providedIn: 'root'
+})
+
+export class DemoGraphic implements CanActivate {
+  constructor(private router: Router) {
+  }
+
+  canActivate(): boolean {
+    if (localStorage.getItem('demo') != 'true') {
       return true;
     } else {
       this.router.navigate(['dashboard/pretest']);
@@ -36,6 +54,7 @@ export class LoggedInService implements CanActivate {
     }
   }
 }
+
 
 @Injectable({
   providedIn: 'root'
@@ -46,7 +65,7 @@ export class PreTestGiven implements CanActivate {
   }
 
   canActivate(): boolean {
-    if (localStorage.getItem('pre') === 'true') {
+    if (localStorage.getItem('pre') == 'true') {
       return true;
     } else {
       this.router.navigate(['dashboard/pretest']);
