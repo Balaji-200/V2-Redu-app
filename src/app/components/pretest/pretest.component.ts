@@ -24,7 +24,7 @@ export class PretestComponent implements OnInit {
       this.preTestService.getPretest().subscribe(res => {
         if (res.questions.length > 0) {
           localStorage.setItem('pre', 'true');
-          this.router.navigate(['dashboard/lectures']);
+          this.router.navigate(['lectures']);
         } else {
           localStorage.setItem('pre', 'false');
         }

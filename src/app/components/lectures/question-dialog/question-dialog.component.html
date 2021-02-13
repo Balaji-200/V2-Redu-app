@@ -1,0 +1,23 @@
+<h1 mat-dialog-title>Question</h1>
+<form novalidate #myForm="ngForm" (submit)="submit(myForm)">
+  <div mat-dialog-content>
+    <p class="text-lead font-weight-normal h-sm-5 h6">{{question}}</p>
+    <div *ngFor="let option of options; index as i">
+      <label style="width: 100%">
+        <input name="{{question}}" id="option-{{i}}" type="radio" value="{{option}}"
+               ngModel required="required">
+        <span class="pl-2 font-weight-light">{{option}}</span>
+      </label>
+    </div>
+  </div>
+  <div *ngIf="formInValid" class="alert alert-danger alert-dismissible fade show" role="alert">
+    <strong>Please select an option.</strong>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"
+            (click)="formInValid = !formInValid">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div mat-dialog-actions fxLayout="row" fxLayoutAlign="end center">
+    <button mat-raised-button color="primary" type="submit">Submit</button>
+  </div>
+</form>

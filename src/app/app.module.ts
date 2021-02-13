@@ -37,6 +37,13 @@ import { LecturesComponent } from './components/lectures/lectures.component';
 import { SuccessDialogComponent } from './components/reset-password/success-dialog/success-dialog.component';
 import { ConfirmDialogComponent } from './components/lectures/confirm-dialog/confirm-dialog.component';
 import { DemographicComponent } from './components/demographic/demographic.component';
+import { SceneOneComponent } from './components/lectures/scenarios/scene-one/scene-one.component';
+import { ExplainerComponent } from './components/lectures/explainer/explainer.component';
+import { SceneTwoComponent } from './components/lectures/scenarios/scene-two/scene-two.component';
+import { SceneThreeComponent } from './components/lectures/scenarios/scene-three/scene-three.component';
+import { SceneFourComponent } from './components/lectures/scenarios/scene-four/scene-four.component';
+import { SceneFiveComponent } from './components/lectures/scenarios/scene-five/scene-five.component';
+import { QuestionDialogComponent } from './components/lectures/question-dialog/question-dialog.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +60,14 @@ import { DemographicComponent } from './components/demographic/demographic.compo
     LecturesComponent,
     SuccessDialogComponent,
     ConfirmDialogComponent,
-    DemographicComponent
+    DemographicComponent,
+    SceneOneComponent,
+    ExplainerComponent,
+    SceneTwoComponent,
+    SceneThreeComponent,
+    SceneFourComponent,
+    SceneFiveComponent,
+    QuestionDialogComponent
   ],
   imports: [
     FlexLayoutModule,

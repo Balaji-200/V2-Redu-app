@@ -1,0 +1,27 @@
+<div fxLayout="column" fxLayoutAlign="space-around center" class="mt-5">
+  <div fxLayout="row" class="frame" style="height: 10vh" fxLayoutAlign="space-between center">
+    <h1 class="mat-h1">Case Scenario-III</h1>
+    <div fxLayout="column" fxLayoutAlign="center center">
+      <p class="m-0">Grade</p>
+      <div #star>
+        <mat-icon class="text-warning">star</mat-icon>
+        <mat-icon class="text-warning">star</mat-icon>
+        <mat-icon class="text-warning">star</mat-icon>
+        <mat-icon class="text-warning">star</mat-icon>
+      </div>
+    </div>
+  </div>
+  <video #scene3 src="https://drive.google.com/uc?export=download&amp;id=1E2XrX0dwFkEmr6rTX5hYbxFxisvc5gFy"
+         class="frame animate__animated"
+         controls
+  ></video>
+  <div fxLayout="row" fxLayoutAlign="space-between center" class="frame mt-4 p-2 p-sm-0" style="height: 10vh">
+    <button mat-raised-button class="bg-secondary text-light" (click)="back()">
+      <mat-icon>arrow_left</mat-icon>
+      Back
+    </button>
+    <button mat-raised-button color="primary" (click)="next()">Next
+      <mat-icon>arrow_right</mat-icon>
+    </button>
+  </div>
+</div>

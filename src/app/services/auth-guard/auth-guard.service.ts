@@ -86,7 +86,7 @@ export class PreTest implements CanActivate {
     if (localStorage.getItem('pre') != 'true') {
       return true;
     } else {
-      this.router.navigate(['dashboard/lectures'])
+      this.router.navigate(['lectures'])
       return false;
     }
   }
@@ -137,7 +137,7 @@ export class Result implements CanActivate {
   }
 
   canActivate(): boolean {
-    if (localStorage.getItem('pos') === 'true' && localStorage.getItem('pre') === 'true') {
+    if (localStorage.getItem('pos') == 'true' && localStorage.getItem('pre') == 'true') {
       return true;
     } else {
       this.router.navigate(['dashboard/posttest'])
