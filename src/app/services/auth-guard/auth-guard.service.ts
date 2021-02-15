@@ -46,7 +46,7 @@ export class DemoGraphic implements CanActivate {
   }
 
   canActivate(): boolean {
-    if (localStorage.getItem('demo') != 'true') {
+    if (localStorage.getItem('demo') != 'true' || localStorage.getItem('demo') == null || localStorage.getItem('demo') == '') {
       return true;
     } else {
       this.router.navigate(['dashboard/pretest']);

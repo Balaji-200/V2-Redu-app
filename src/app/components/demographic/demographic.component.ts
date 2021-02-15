@@ -23,7 +23,7 @@ export class DemographicComponent implements OnInit {
       this.demographicService.getDemographic().subscribe(res => {
         if (res.questions.length > 0) {
           localStorage.setItem('demo', 'true');
-          this.router.navigate(['dashboard/lectures']);
+          this.router.navigate(['/dashboard/pretest']);
         } else
           localStorage.setItem('demo', 'false');
         this.processingPost = false;

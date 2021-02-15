@@ -64,7 +64,7 @@ export class PretestComponent implements OnInit {
       this.preTestService.postPretest(response).subscribe(res => {
         localStorage.setItem('pre', 'true');
         this.processingPost = false;
-        this.router.navigate(['/dashboard/lectures']);
+        this.router.navigate(['lectures']);
       }, err => this.router.navigate(['/']));
     }
   }

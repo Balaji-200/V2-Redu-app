@@ -4,7 +4,6 @@ import {MatDialog} from '@angular/material/dialog';
 import {QuestionDialogComponent} from '../../question-dialog/question-dialog.component';
 import {ConfirmDialogComponent} from '../../confirm-dialog/confirm-dialog.component';
 import {PosttestService} from '../../../../services/posttest/posttest.service';
-import {fakeAsync} from '@angular/core/testing';
 
 @Component({
   selector: 'app-scene-five',
