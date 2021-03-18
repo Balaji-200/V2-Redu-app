@@ -33,10 +33,10 @@ export class HeaderComponent implements OnInit {
   Logout() {
     this.loggingOut = true;
     this.loginService.logout().subscribe(res => {
-      localStorage.setItem('j', '');
+      localStorage.clear();
       this.loggingOut = false;
       this.router.navigate(['/']);
-    });
+    }, err => this.router.navigate(['/']));
   }
 
   ngOnInit(): void {

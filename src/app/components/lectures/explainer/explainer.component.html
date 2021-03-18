@@ -1,22 +1,15 @@
 <div fxLayout="column" fxLayoutAlign="space-around center" class="mt-5" *ngIf="!processing">
-  <!--  <video id="video1" preload="true" class="frame" #myVideo src="https://drive.google.com/uc?export=download&id=1VEI0qfdzF190WJAjZ8ZmWvfhdeADiQfn" autoplay controls="true"-->
-  <!--  ></video>-->
   <h1 class="mat-h1">Explanation</h1>
-  <iframe class="frame" src="https://drive.google.com/file/d/1VEI0qfdzF190WJAjZ8ZmWvfhdeADiQfn/preview"
-          allowfullscreen="true" frameborder="0"></iframe>
-  <!--  <iframe class="frame mt-3 mb-3" src="https://drive.google.com/file/d/1uuhTT2hFiH9JtM0sZXeM6QL6giHM_Dnb/preview"-->
-  <!--          allowfullscreen="true" frameborder="0"></iframe>-->
-  <!--  <iframe class="frame mt-3 mb-3" src="https://drive.google.com/file/d/1uUfKp-DHealUfY-iXqugQxdLsbYOPb89/preview"-->
-  <!--          allowfullscreen="true" frameborder="0"></iframe>-->
-  <!--  <iframe class="frame mt-3 mb-3" src="https://drive.google.com/file/d/1oEicKHta0xGNad5vc5lqO6ISupzkWSKa/preview"-->
-  <!--          allowfullscreen="true" frameborder="0"></iframe>-->
-  <!--  <iframe class="frame mt-3 mb-3" src="https://drive.google.com/file/d/1Uvfem4u9ynlB6qIz42KDnlhLJzDp&#45;&#45;q4/preview"-->
-  <!--          allowfullscreen="true" frameborder="0"></iframe>-->
-  <!--  <iframe class="frame mt-3 mb-3" src="https://drive.google.com/file/d/1wFc8EimmcehvjWC9zi-meDuMnsnJTGFx/preview"-->
-  <!--          allowfullscreen="true" frameborder="0"></iframe>-->
-    <div fxLayout="row" fxLayoutAlign="end center" class="frame p-2 p-sm-0 mt-4" style="height: 10vh">
-      <button mat-raised-button color="primary" (click)="next()">Next <mat-icon>arrow_right</mat-icon></button>
-    </div>
+  <div class="frame">
+    <iframe src="https://drive.google.com/file/d/1KHVK1rQFCstxEN8dbwasJECCvv6jgt0o/preview" width="100%" height="100%"
+            frameborder="0" allowfullscreen="true"></iframe>
+    <div style="width: 80px; height: 80px; position: absolute; opacity: 0; right: 0px; top: 0px">&nbsp;</div>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="end center" class="frame p-2 p-sm-0 mt-4" style="height: 10vh">
+    <button mat-raised-button color="primary" (click)="next()">Next
+      <mat-icon>arrow_right</mat-icon>
+    </button>
+  </div>
 </div>
 <div fxLayout="row" fxLayoutAlign="center center" style="height: 100vh" *ngIf="processing">
   <mat-spinner></mat-spinner>

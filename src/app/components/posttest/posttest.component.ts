@@ -32,7 +32,7 @@ export class PosttestComponent implements OnInit {
             localStorage.setItem('testDate', res.testDate);
           }
           let current = Date.now()
-          if(Date.parse(localStorage.getItem('testDate')) < current){
+          if(Date.parse(localStorage.getItem('testDate')) > current){
             this.canGiveTest = true
             this.processingPost = false;
           }else{

@@ -86,6 +86,7 @@ button:focus {
 .frame {
   width: 50vw;
   height: 30vw;
+  position: relative;
 }
 
 video::-webkit-media-controls-fullscreen-button
